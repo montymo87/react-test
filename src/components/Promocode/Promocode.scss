@@ -1,0 +1,113 @@
+@import "../../style/helpers/helpers-all.scss";
+
+.promocode {
+  @include bp($point_3) {
+    padding-top: 0.8rem;
+  }
+}
+
+.promocode__title {
+  @include h2;
+
+  &:not(:last-child) {
+    @include bp($point_2, min) {
+      margin-bottom: 1.4rem;
+    }
+    @include bp($point_3) {
+      margin-bottom: 0.6rem;
+    }
+  }
+}
+
+.promocode__form_in {
+  max-width: 66.4rem;
+  width: 100%;
+}
+
+.promocode__form_row {
+  @include flex_block(row, wrap, flex-start);
+
+  @include bp($point_4, min) {
+    gap: 2.4rem;
+  }
+
+  @include bp($point_4 - 1) {
+    gap: 1.2rem;
+  }
+}
+
+.promocode__field_label {
+  display: block;
+  color: $black_3;
+
+  font-weight: 500;
+
+  @include bp($point_2, min) {
+    font-size: 1.6rem;
+  }
+  @include bp($point_3, $point_4) {
+    font-size: 1.4rem;
+  }
+  @include bp($point_4 - 1) {
+    font-size: 1rem;
+  }
+
+  &:not(:last-child) {
+    @include bp($point_2, min) {
+      margin-bottom: 1.2rem;
+    }
+    @include bp($point_3) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.promocode__field {
+  position: relative;
+  flex-grow: 1;
+
+  &:after {
+    position: absolute;
+    bottom: 0.9rem;
+    right: 0.9rem;
+    display: block;
+
+    content: "";
+    background: url("../../../public/images/icons/check.svg") no-repeat center
+      center / contain;
+
+    @include bp($point_2, min) {
+      height: 2.4rem;
+      width: 2.4rem;
+    }
+    @include bp($point_3, $point_4) {
+      height: 2.4rem;
+      width: 2.4rem;
+    }
+    @include bp($point_4 - 1) {
+      height: 1.8rem;
+      width: 1.8rem;
+    }
+  }
+}
+
+.promocode__field_input {
+  @include form_el_default;
+}
+
+.promocode_input_btn_w {
+  margin-top: auto;
+
+  @include bp($point_4, min) {
+    min-width: 15.2rem;
+  }
+
+  @include bp($point_4 - 1) {
+    width: 100%;
+  }
+
+  input {
+    outline: none;
+    border: none;
+  }
+}

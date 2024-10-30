@@ -1,0 +1,322 @@
+@import "../../style/helpers/helpers-all.scss";
+
+.transactions {
+  padding-bottom: 10rem;
+
+  @include bp($point_2, min) {
+    padding-top: 3.6rem;
+  }
+  @include bp($point_3) {
+    padding-top: 1.2rem;
+  }
+}
+
+.transactions__title {
+  font-weight: 400;
+  margin-right: auto;
+
+  @include bp($point_2, min) {
+    font-size: 2.4rem;
+  }
+  @include bp($point_3, $point_4) {
+    font-size: 2.2rem;
+  }
+  @include bp($point_4 - 1) {
+    font-size: 1.8rem;
+  }
+
+  &:not(:last-child) {
+    @include bp($point_2, min) {
+      margin-bottom: 3rem;
+    }
+    @include bp($point_3) {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.transactions__list {
+  &:not(:last-child) {
+    @include bp($point_2, min) {
+      margin-bottom: 5rem;
+    }
+    @include bp($point_3) {
+      margin-bottom: 3.1rem;
+    }
+  }
+}
+
+.transactions__list_row {
+  max-width: 116rem;
+  width: 100%;
+
+  gap: 1.6rem;
+
+  @include bp($point_2, min) {
+    @include flex_block(row, nowrap, flex-start);
+  }
+  @include bp($point_3) {
+    @include flex_block(row, wrap, flex-start, center, center);
+  }
+
+  &:not(:last-child) {
+    @include bp($point_2, min) {
+      margin-bottom: 3.7rem;
+    }
+    @include bp($point_3) {
+      margin-bottom: 2.2rem;
+    }
+  }
+}
+
+.transactions__list_col {
+  &.transactions__list_col--img {
+    @include flex_block(row, nowrap, center, center, center);
+    position: relative;
+
+    flex: none;
+
+    @include bp($point_2, min) {
+      padding: 0.6rem 0.6rem;
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+    @include bp($point_3) {
+      padding: 1.3rem 1.2rem;
+      width: auto;
+      height: 3.8rem;
+    }
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+
+      height: 100%;
+      content: "";
+      background-color: $black_4;
+
+      @include bp($point_2, min) {
+        width: 100%;
+        border-radius: 1rem;
+      }
+      @include bp($point_3) {
+        width: calc(100vw - var(--gl-indent) * 2);
+        border-radius: 0.4rem;
+      }
+    }
+  }
+
+  &.transactions__list_col--info {
+    @include bp($point_2, min) {
+      width: 100%;
+    }
+
+    @include bp($point_3) {
+      width: calc(100% + var(--gl-indent));
+      overflow-x: hidden;
+      order: 4;
+      margin-right: -2rem;
+    }
+  }
+
+  &.transactions__list_col--state {
+    flex: none;
+
+    @include bp($point_2, min) {
+      width: 11rem;
+    }
+
+    @include bp($point_3) {
+      text-align: right;
+      position: relative;
+      z-index: 1;
+      margin-left: auto;
+      padding-right: 1.2rem;
+      width: 15rem;
+    }
+  }
+}
+
+.transactions__list_item_img {
+  @include contain_img;
+  position: relative;
+  z-index: 1;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.transactions__sublist_item {
+  &:last-child {
+    @include bp($point_3) {
+      padding-right: 2rem;
+    }
+  }
+}
+
+.transactions__sublist_item_title {
+  @include bp($point_2, min) {
+    font-size: 1.6rem;
+  }
+  @include bp($point_3, $point_4) {
+    font-size: 1.4rem;
+  }
+  @include bp($point_4 - 1) {
+    font-size: 1.2rem;
+  }
+  &:not(:last-child) {
+    @include bp($point_2, min) {
+      margin-bottom: 0.8rem;
+    }
+    @include bp($point_3) {
+      margin-bottom: 0.2rem;
+    }
+  }
+}
+
+.transactions__list_item_descr {
+  color: $black_3;
+
+  @include bp($point_2, min) {
+    font-size: 1.4rem;
+  }
+  @include bp($point_3) {
+    font-size: 1rem;
+  }
+
+  .transactions__list_col--state & {
+    @include bp($point_4 - 1) {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.transactions__sublist {
+  display: grid;
+
+  @include bp($point_2, min) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.6rem;
+  }
+  @include bp($point_3) {
+    grid-template-columns: repeat(4, minmax(max-content, 1fr));
+    gap: 3rem;
+    width: auto;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+}
+
+.transactions__list_item_state {
+  text-transform: capitalize;
+
+  @include bp($point_2, min) {
+    font-size: 1.6rem;
+  }
+  @include bp($point_3) {
+    font-size: 1.2rem;
+  }
+
+  &.transactions__list_item_state--processing {
+    color: #c69516;
+  }
+
+  &.transactions__list_item_state--active {
+    color: #00ba61;
+  }
+
+  &.transactions__list_item_state--performed {
+    color: #2658d7;
+  }
+
+  &:not(:last-child) {
+    @include bp($point_2, min) {
+      margin-bottom: 0.8rem;
+    }
+    @include bp($point_3) {
+      margin-bottom: 0.2rem;
+    }
+  }
+}
+
+.transactions__btn_w {
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.transactions__heding {
+  @include flex_block(row, nowrap, flex-start);
+}
+
+.transactions__filter {
+  position: relative;
+
+  &:hover:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 0.6rem);
+    content: "";
+  }
+}
+
+.transactions__filter_btn {
+  background-color: $black_4;
+  border-radius: 0.4rem;
+  transition: opacity ease 0.3s;
+  cursor: pointer;
+
+  @include bp($point_2, min) {
+    padding: 1rem;
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+  @include bp($point_3) {
+    padding: 0.4rem;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  img {
+    @include contain_img;
+  }
+}
+
+.transactions__fiter_body {
+  position: absolute;
+  z-index: 3;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background-color: $black_4;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  transition: opacity ease 0.3s;
+
+  opacity: 0;
+  pointer-events: none;
+
+  .transactions__filter:hover & {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.transactions__fiter_item {
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: opacity ease 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 0.6rem;
+  }
+}

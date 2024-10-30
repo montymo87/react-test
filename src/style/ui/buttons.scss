@@ -1,0 +1,4 @@
+.btn_base {
+  @include btn_style_red;
+  @include btn_size_normal;
+}

@@ -1,0 +1,68 @@
+@import "../../style/helpers/helpers-all.scss";
+
+.deposit {
+  @include bp($point_2, min) {
+    padding-top: 3.2rem;
+  }
+  @include bp($point_3) {
+    padding-top: 2.5rem;
+  }
+}
+
+.deposit__title {
+  @include h1;
+  font-weight: 700;
+
+  &:not(:last-child) {
+    @include bp($point_2, min) {
+      margin-bottom: 3.4rem;
+    }
+    @include bp($point_3) {
+      margin-bottom: 1.4rem;
+    }
+  }
+}
+
+.deposit__section_title {
+  @include h2;
+  font-weight: 700;
+  &:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.deposit__list_title {
+  @include h3;
+  font-weight: 500;
+  &:not(:last-child) {
+    margin-bottom: 2.2rem;
+  }
+}
+
+.deposit__list {
+  display: grid;
+  max-width: 112.2rem;
+  width: 100%;
+
+  @include bp($point_2, min) {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.8rem;
+  }
+  @include bp($point_3, $point_4) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem;
+  }
+  @include bp($point_4 - 1) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem 2rem;
+  }
+
+  &:not(:last-child) {
+    @include bp($point_2, min) {
+      margin-bottom: 3.2rem;
+    }
+    @include bp($point_3) {
+      margin-bottom: 2.2rem;
+    }
+  }
+}
